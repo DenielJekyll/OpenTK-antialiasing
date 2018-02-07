@@ -247,6 +247,7 @@
             this.Controls.Add(this.dashbord);
             this.Controls.Add(this.glViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Canvas";
             this.Text = "pure.zlo_2";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Canvas_KeyDown);
