@@ -78,9 +78,9 @@
             this.dashbord.Controls.Add(this.cellSize_lbl);
             this.dashbord.Controls.Add(this.label1);
             this.dashbord.Controls.Add(this.cellSize_trackBar);
-            this.dashbord.Location = new System.Drawing.Point(797, 2);
+            this.dashbord.Location = new System.Drawing.Point(797, -3);
             this.dashbord.Name = "dashbord";
-            this.dashbord.Size = new System.Drawing.Size(196, 539);
+            this.dashbord.Size = new System.Drawing.Size(196, 556);
             this.dashbord.TabIndex = 1;
             // 
             // color_button
@@ -129,6 +129,7 @@
             this.XOR_radioButton.Name = "XOR_radioButton";
             this.XOR_radioButton.Size = new System.Drawing.Size(48, 17);
             this.XOR_radioButton.TabIndex = 10;
+            this.XOR_radioButton.Tag = "1";
             this.XOR_radioButton.Text = "XOR";
             this.XOR_radioButton.UseVisualStyleBackColor = true;
             this.XOR_radioButton.CheckedChanged += new System.EventHandler(this.CheckedChanged);
@@ -140,6 +141,7 @@
             this.notXOR_radioButton.Name = "notXOR_radioButton";
             this.notXOR_radioButton.Size = new System.Drawing.Size(51, 17);
             this.notXOR_radioButton.TabIndex = 9;
+            this.notXOR_radioButton.Tag = "2";
             this.notXOR_radioButton.Text = "!XOR";
             this.notXOR_radioButton.UseVisualStyleBackColor = true;
             this.notXOR_radioButton.CheckedChanged += new System.EventHandler(this.CheckedChanged);
@@ -153,6 +155,7 @@
             this.noLogic_radioButton.Size = new System.Drawing.Size(41, 17);
             this.noLogic_radioButton.TabIndex = 8;
             this.noLogic_radioButton.TabStop = true;
+            this.noLogic_radioButton.Tag = "0";
             this.noLogic_radioButton.Text = "NO";
             this.noLogic_radioButton.UseVisualStyleBackColor = true;
             this.noLogic_radioButton.CheckedChanged += new System.EventHandler(this.CheckedChanged);
@@ -174,6 +177,7 @@
             this.color_checkBox.Name = "color_checkBox";
             this.color_checkBox.Size = new System.Drawing.Size(50, 17);
             this.color_checkBox.TabIndex = 5;
+            this.color_checkBox.Tag = "2";
             this.color_checkBox.Text = "Color";
             this.color_checkBox.UseVisualStyleBackColor = true;
             this.color_checkBox.CheckedChanged += new System.EventHandler(this.checkBoxChanged);
@@ -185,6 +189,7 @@
             this.rastr_checkBox.Name = "rastr_checkBox";
             this.rastr_checkBox.Size = new System.Drawing.Size(51, 17);
             this.rastr_checkBox.TabIndex = 4;
+            this.rastr_checkBox.Tag = "1";
             this.rastr_checkBox.Text = "Rastr";
             this.rastr_checkBox.UseVisualStyleBackColor = true;
             this.rastr_checkBox.CheckedChanged += new System.EventHandler(this.checkBoxChanged);
@@ -196,6 +201,7 @@
             this.borders_checkBox.Name = "borders_checkBox";
             this.borders_checkBox.Size = new System.Drawing.Size(62, 17);
             this.borders_checkBox.TabIndex = 3;
+            this.borders_checkBox.Tag = "0";
             this.borders_checkBox.Text = "Borders";
             this.borders_checkBox.UseVisualStyleBackColor = true;
             this.borders_checkBox.CheckedChanged += new System.EventHandler(this.checkBoxChanged);
