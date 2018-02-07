@@ -60,6 +60,7 @@
             this.glViewer.Load += new System.EventHandler(this.glViewer_Load);
             this.glViewer.Paint += new System.Windows.Forms.PaintEventHandler(this.glViewer_Paint);
             this.glViewer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glViewer_MouseDown);
+            this.glViewer.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glViewer_MouseMove);
             this.glViewer.Resize += new System.EventHandler(this.glViewer_Resize);
             // 
             // dashbord
@@ -85,7 +86,7 @@
             // 
             // color_button
             // 
-            this.color_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.color_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.color_button.Location = new System.Drawing.Point(3, 480);
             this.color_button.Name = "color_button";
             this.color_button.Size = new System.Drawing.Size(98, 23);
@@ -96,7 +97,7 @@
             // 
             // textureChoose_button
             // 
-            this.textureChoose_button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.textureChoose_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.textureChoose_button.Location = new System.Drawing.Point(107, 480);
             this.textureChoose_button.Name = "textureChoose_button";
             this.textureChoose_button.Size = new System.Drawing.Size(86, 23);
@@ -116,6 +117,7 @@
             // 
             // currentId_comboBox
             // 
+            this.currentId_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.currentId_comboBox.FormattingEnabled = true;
             this.currentId_comboBox.Location = new System.Drawing.Point(76, 515);
             this.currentId_comboBox.Name = "currentId_comboBox";

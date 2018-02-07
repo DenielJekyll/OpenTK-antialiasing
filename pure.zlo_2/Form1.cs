@@ -45,12 +45,24 @@ namespace pure.zlo_2
             if (_hasCenter)
             {
                 _mouse1 = e.Location;
+                _mouse1.X -= 1;
+                _mouse1.Y -= 1;
+                renderer.addFigure(_mouse1, e.Location);
+                renderer.refresh();
+                dashbord.Enabled = false;
+                currentId_comboBox.Items.Add("" + renderer.Count);
+                currentId_comboBox.SelectedIndex = currentId_comboBox.Items.Count - 1;
                 return;
             }
-            renderer.addFigure(_mouse1, e.Location);
-            currentId_comboBox.Items.Add("" + renderer.Count);
-            currentId_comboBox.SelectedIndex = currentId_comboBox.Items.Count - 1;
-            renderer.refresh();
+            dashbord.Enabled = true;
+        }
+
+        private void glViewer_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_hasCenter){
+                renderer.tempFig(currentId_comboBox.SelectedIndex, _mouse1, e.Location);
+                renderer.refresh();
+            }
         }
 
         private void glViewer_Paint(object sender, PaintEventArgs e)
@@ -68,25 +80,29 @@ namespace pure.zlo_2
 
         private void Canvas_KeyDown(object sender, KeyEventArgs e)
         {
-            if (currentId_comboBox.SelectedIndex == -1) return;
-            bool refresh = true;
-            switch (e.KeyCode)
+            if (!_hasCenter)
             {
-                case Keys.Q:
-                case Keys.E:
+                if (currentId_comboBox.SelectedIndex == -1) return;
+                bool refresh = true;
+
+                switch (e.KeyCode)
+                {
+                    case Keys.Q:
+                    case Keys.E:
                         renderer.rotateFig(currentId_comboBox.SelectedIndex, e.KeyCode == Keys.E);
-                    break;
-                case Keys.Z:
-                case Keys.X:
-                    renderer.resizeFig(currentId_comboBox.SelectedIndex, e.KeyCode == Keys.X);
-                    break;
-                case Keys.W: renderer.moveFig(currentId_comboBox.SelectedIndex, 0, -renderer.cellSize); break;
-                case Keys.S: renderer.moveFig(currentId_comboBox.SelectedIndex, 0, renderer.cellSize); break;
-                case Keys.A: renderer.moveFig(currentId_comboBox.SelectedIndex, -renderer.cellSize, 0); break;
-                case Keys.D: renderer.moveFig(currentId_comboBox.SelectedIndex, renderer.cellSize, 0); break;
-                default: refresh = false; break;
+                        break;
+                    case Keys.Z:
+                    case Keys.X:
+                        renderer.resizeFig(currentId_comboBox.SelectedIndex, e.KeyCode == Keys.X);
+                        break;
+                    case Keys.W: renderer.moveFig(currentId_comboBox.SelectedIndex, 0, -renderer.cellSize); break;
+                    case Keys.S: renderer.moveFig(currentId_comboBox.SelectedIndex, 0, renderer.cellSize); break;
+                    case Keys.A: renderer.moveFig(currentId_comboBox.SelectedIndex, -renderer.cellSize, 0); break;
+                    case Keys.D: renderer.moveFig(currentId_comboBox.SelectedIndex, renderer.cellSize, 0); break;
+                    default: refresh = false; break;
+                }
+                if (refresh) renderer.refresh();
             }
-            if (refresh) renderer.refresh();
         }
 
         private void cellSize_trackBar_Scroll(object sender, EventArgs e)
@@ -135,5 +151,7 @@ namespace pure.zlo_2
                 }
             }
         }
+
+
     }
 }

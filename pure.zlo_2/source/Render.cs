@@ -92,6 +92,11 @@ namespace pure.zlo_2.source {
             _figs[id].texid = texid;
         }
 
+        public void tempFig(int id, Point x, Point y)
+        {
+            _figs[id] = new Shape(x, y);
+        }
+
         public void changeColor(int id, Color cl){
             _figs[id].cl = cl;
         }
@@ -228,7 +233,6 @@ namespace pure.zlo_2.source {
                 }
             GL.Disable(EnableCap.ColorLogicOp);
         }
-
-
+        
     }
 }
