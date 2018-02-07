@@ -51,10 +51,12 @@
             // 
             // glViewer
             // 
+            this.glViewer.AutoSize = true;
             this.glViewer.BackColor = System.Drawing.Color.Black;
-            this.glViewer.Location = new System.Drawing.Point(-3, -3);
+            this.glViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.glViewer.Location = new System.Drawing.Point(0, 0);
             this.glViewer.Name = "glViewer";
-            this.glViewer.Size = new System.Drawing.Size(801, 545);
+            this.glViewer.Size = new System.Drawing.Size(992, 542);
             this.glViewer.TabIndex = 0;
             this.glViewer.VSync = false;
             this.glViewer.Load += new System.EventHandler(this.glViewer_Load);
@@ -79,7 +81,7 @@
             this.dashbord.Controls.Add(this.cellSize_lbl);
             this.dashbord.Controls.Add(this.label1);
             this.dashbord.Controls.Add(this.cellSize_trackBar);
-            this.dashbord.Location = new System.Drawing.Point(797, -3);
+            this.dashbord.Location = new System.Drawing.Point(0, 0);
             this.dashbord.Name = "dashbord";
             this.dashbord.Size = new System.Drawing.Size(196, 556);
             this.dashbord.TabIndex = 1;
@@ -257,6 +259,7 @@
             this.dashbord.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cellSize_trackBar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
