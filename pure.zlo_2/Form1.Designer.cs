@@ -45,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(992, 542);
             this.Controls.Add(this.glViewer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
