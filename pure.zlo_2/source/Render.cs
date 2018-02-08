@@ -25,7 +25,7 @@ namespace pure.zlo_2.source {
         public Render(GLControl g){
             this._GLC = g;
             _figs = new List<Shape>();
-            //_shape = new Shape(new Point(50, 50), new Point(50, 100));
+            _shape = new Shape(new Point(50, 50), new Point(50, 100));
         }
 
         public void initialize(){
